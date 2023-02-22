@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Task Form";
+}
+<!--@model Mission08_0208.Models.TaskModel-->
+
+
+<h3>Enter Your Task</h3>
+
+<div>
+    <form method="post">
+        <label asp-for="Task">Task:</label>
+        <input asp-for="Task" /><br />
+
+        <label asp-for="DueDate">Due Date:</label>
+        <input asp-for="DueDate" /><br />
+
+        <label asp-for="Quadrant">Quadrant:</label>
+        <input asp-for="Quadrant" /><br />
+
+        <label asp-for="CategoryId">Category:</label>
+        <!--
+    <select asp-for="CategoryId">
+        <option value="">Select a Category</option>
+        @foreach (Category c in ViewBag.Categories)
+        {
+        <option value="@c.CategoryId">@c.CategoryName</option>
+        }
+    </select><br />
+        -->
+        <label asp-for="completed">Completed</label>
+        True: @Html.RadioButton("Completed", "True")
+        False: @Html.RadioButton("Completed", "False")
+
+    </form>
+</div>
