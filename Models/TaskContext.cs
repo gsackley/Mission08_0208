@@ -16,7 +16,7 @@ namespace Mission08_0208.Models
             // Leave blank for now
         }
 
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<Task_> Tasks { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         // Seeding the Data
@@ -29,8 +29,8 @@ namespace Mission08_0208.Models
                 new Category { CategoryId = 4, CategoryName = "Church" }
             );
 
-            mb.Entity<Task>().HasData(
-                new Task
+            mb.Entity<Task_>().HasData(
+                new Task_
                 {
                     TaskId = 1,
                     TaskName = "Finish Applications",
@@ -40,7 +40,7 @@ namespace Mission08_0208.Models
                     Completed = false,
 
                 },
-                new Task
+                new Task_
                 {
                     TaskId = 2,
                     TaskName = "Call mom",
@@ -49,7 +49,7 @@ namespace Mission08_0208.Models
                     CategoryId = 1,
                     Completed = false,
                 },
-                new Task
+                new Task_
                 {
                     TaskId = 3,
                     TaskName = "Ask out Tiffany",
@@ -58,7 +58,7 @@ namespace Mission08_0208.Models
                     CategoryId = 1,
                     Completed = false,
                 },
-                new Task
+                new Task_
                 {
                     TaskId = 4,
                     TaskName = "Nicole gets dunked!",

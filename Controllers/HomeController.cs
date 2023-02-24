@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission08_0208.Models;
 using System;
@@ -19,19 +20,33 @@ namespace Mission08_0208.Controllers
             _taskContext = taskContext;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public IActionResult Quadrants()
         {
+            var newTask = _taskContext.Tasks.Include(X => X.Category).ToList();
+            return View(newTask);
+        }
+
+        [HttpGet]
+        public IActionResult TaskForm()
+        {
+            ViewBag.Categories = _taskContext.Categories.ToList();
             return View();
+        }
+        [HttpPost]
+        public IActionResult TaskForm(Task_ hcm)
+        {
+            if (ModelState.IsValid)
+            {
+                _taskContext.Add(hcm);
+                _taskContext.SaveChanges();
+
+                return View("Confirmation", hcm);
+            }
+            else // If Invalid
+            {
+                ViewBag.Categories = _taskContext.Categories.ToList();
+                return View(hcm);
+            }
         }
 
         [HttpGet]
@@ -44,7 +59,7 @@ namespace Mission08_0208.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Models.Task ar)
+        public IActionResult Edit(Models.Task_ ar)
         {
             _taskContext.Update(ar);
             _taskContext.SaveChanges();
@@ -61,7 +76,7 @@ namespace Mission08_0208.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Models.Task ar)
+        public IActionResult Delete(Task_ ar)
         {
             _taskContext.Tasks.Remove(ar);
             _taskContext.SaveChanges();
