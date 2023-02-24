@@ -16,9 +16,10 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-            {
-
-                    @if (item.Quadrant == 1)
+        {
+            @if (item.Completed == false)
+             {
+                @if (item.Quadrant == 1)
                 {
                     <tr>
                         <td>
@@ -43,7 +44,7 @@
                         </td>
                     </tr>
                 }
-                    @if (item.Quadrant == 2)
+                @if (item.Quadrant == 2)
                 {
                     <tr>
                         <td></td>
@@ -68,7 +69,7 @@
                         </td>
                     </tr>
                 }
-                    @if (item.Quadrant == 3)
+                @if (item.Quadrant == 3)
                 {
                     <tr>
                         <td></td>
@@ -92,7 +93,7 @@
                         </td>
                     </tr>
                 }
-                    @if (item.Quadrant == 4)
+                @if (item.Quadrant == 4)
                 {
                     <tr>
                         <td></td>
@@ -119,5 +120,6 @@
                 }
             }
 
+        }
     </tbody>
 </table>
