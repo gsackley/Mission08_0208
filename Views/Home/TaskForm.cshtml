@@ -3,11 +3,14 @@
 }
 @model Mission08_0208.Models.Task_
 
+<img src="~/img/matrix.png" /><br />
+
 <h3>Enter Your Task</h3>
 
 <div>
     <form method="post">
         <input type="hidden" asp-for="TaskId"/>
+
         <label asp-for="TaskName">Task:</label>
         <input asp-for="TaskName" /><br />
 
