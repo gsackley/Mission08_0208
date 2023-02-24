@@ -11,10 +11,10 @@
         <input asp-for="TaskName" /><br />
 
         <label asp-for="DueDate">Due Date:</label>
-        <input asp-for="DueDate" /><br />
+        <input type="date" asp-for="DueDate" /><br />
 
         <label asp-for="Quadrant">Quadrant:</label>
-        <input asp-for="Quadrant" /><br />
+        <input type="number" min="1" max="4" asp-for="Quadrant" /><br />
 
         <label asp-for="CategoryId">Category:</label>
 
