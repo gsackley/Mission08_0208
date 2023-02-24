@@ -10,4 +10,25 @@
             <td>Not Urgent</td>
         </tr>
     </thead>
+    <tbody>
+        <tr>
+            <td class="font-weight-bold">Important</td>
+            <td>Quadrant 1</td>
+            <td>Quadrant 2</td>
+            <td class="font-weight-bold">Not Important</td>
+            <td>Quadrant 3</td>
+            <td>Quadrant 4</td>
+
+            <td>
+                <a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@item.ApplicationID">
+                    Edit
+                </a>
+            </td>
+            <td>
+                <a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@item.ApplicationID">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    </tbody>
 </table>
