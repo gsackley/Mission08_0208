@@ -21,9 +21,9 @@
             <td>Urgent and Not Important</td>
             <td>Not Urgent and Important</td>
             <td>Not Urgent and Not Important</td>
-
         </tr>
     </thead>
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -33,22 +33,22 @@
                 {
                     <tr>
                         <td>
-                            @item.Category
-                            @item.TaskName
-                            @item.DueDate
-                            @item.Completed
+                            Category: @item.Category.CategoryName<br />
+                            Task: @item.TaskName<br />
+                            Due: @item.DueDate<br />
+                            Completed: @item.Completed<br />
                         </td>
                         <td></td>
                         <td></td>
                         <td></td>
 
                         <td>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@item.TaskId">
                                 Edit
                             </a>
                         </td>
                         <td>
-                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@item.TaskId">
                                 Delete
                             </a>
                         </td>
@@ -59,21 +59,21 @@
                     <tr>
                         <td></td>
                         <td>
-                            @item.Category
-                            @item.TaskName
-                            @item.DueDate
-                            @item.Completed
+                            Category: @item.Category.CategoryName<br />
+                            Task: @item.TaskName<br />
+                            Due: @item.DueDate<br />
+                            Completed: @item.Completed<br />
                         </td>
                         <td></td>
                         <td></td>
 
                         <td>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@item.TaskId">
                                 Edit
                             </a>
                         </td>
                         <td>
-                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@item.TaskId">
                                 Delete
                             </a>
                         </td>
@@ -85,19 +85,20 @@
                         <td></td>
                         <td></td>
                         <td>
-                            @item.Category
-                            @item.TaskName
-                            @item.DueDate
-                            @item.Completed
+                            Category: @item.Category.CategoryName<br />
+                            Task: @item.TaskName<br />
+                            Due: @item.DueDate<br />
+                            Completed: @item.Completed<br />
                         </td>
+                        <td></td>
 
                         <td>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@item.TaskId">
                                 Edit
                             </a>
                         </td>
                         <td>
-                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@item.TaskId">
                                 Delete
                             </a>
                         </td>
@@ -110,19 +111,19 @@
                         <td></td>
                         <td></td>
                         <td>
-                            @item.Category
-                            @item.TaskName
-                            @item.DueDate
-                            @item.Completed
+                            Category: @item.Category.CategoryName<br />
+                            Task: @item.TaskName<br />
+                            Due: @item.DueDate<br />
+                            Completed: @item.Completed<br />
                         </td>
 
                         <td>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@item.TaskId">
                                 Edit
                             </a>
                         </td>
                         <td>
-                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.TaskId">
+                            <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@item.TaskId">
                                 Delete
                             </a>
                         </td>

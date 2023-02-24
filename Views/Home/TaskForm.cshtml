@@ -9,7 +9,7 @@
 
 <div>
     <form method="post">
-        <input type="hidden" asp-for="TaskId"/>
+        <!--<input type="hidden" asp-for="TaskId"/>-->
 
         <label asp-for="TaskName">Task:</label>
         <input asp-for="TaskName" /><br />
@@ -18,10 +18,14 @@
         <input type="date" asp-for="DueDate" /><br />
 
         <label asp-for="Quadrant">Quadrant:</label>
-        <input type="number" min="1" max="4" asp-for="Quadrant" /><br />
+        <select asp-for="Quadrant">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
 
         <label asp-for="CategoryId">Category:</label>
-
         <select asp-for="CategoryId">
             <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Categories)
@@ -32,10 +36,9 @@
 
         <label asp-for="Completed">Completed</label>
         True: @Html.RadioButton("Completed", "True")
-        False: @Html.RadioButton("Completed", "False")
-        <br />
+        False: @Html.RadioButton("Completed", "False")<br />
+
         <button type="submit">Submit</button>
         <div asp-validation-summary="All"></div>
-
     </form>
 </div>

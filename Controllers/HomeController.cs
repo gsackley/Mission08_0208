@@ -50,11 +50,11 @@ namespace Mission08_0208.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int taskid)
         {
             ViewBag.Categories = _taskContext.Categories.ToList();
 
-            var tasks = _taskContext.Tasks.Single(item => item.TaskId == id);
+            var tasks = _taskContext.Tasks.Single(item => item.TaskId == taskid);
             return View("TaskForm", tasks);
         }
 
@@ -64,14 +64,13 @@ namespace Mission08_0208.Controllers
             _taskContext.Update(ar);
             _taskContext.SaveChanges();
 
-
             return RedirectToAction("Quadrants");
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int taskid)
         {
-            var tasks = _taskContext.Tasks.Single(item => item.TaskId == id);
+            var tasks = _taskContext.Tasks.Single(item => item.TaskId == taskid);
             return View(tasks);
         }
 
