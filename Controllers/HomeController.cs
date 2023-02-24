@@ -50,16 +50,16 @@ namespace Mission08_0208.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int TaskId)
+        public IActionResult Edit(int id)
         {
             ViewBag.Categories = _taskContext.Categories.ToList();
 
-            var tasks = _taskContext.Tasks.Single(item => item.TaskId == TaskId);
+            var tasks = _taskContext.Tasks.Single(item => item.TaskId == id);
             return View("TaskForm", tasks);
         }
 
         [HttpPost]
-        public IActionResult Edit(Models.Task_ ar)
+        public IActionResult Edit(Task_ ar)
         {
             _taskContext.Update(ar);
             _taskContext.SaveChanges();
@@ -69,9 +69,9 @@ namespace Mission08_0208.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int TaskId)
+        public IActionResult Delete(int id)
         {
-            var tasks = _taskContext.Tasks.Single(item => item.TaskId == TaskId);
+            var tasks = _taskContext.Tasks.Single(item => item.TaskId == id);
             return View(tasks);
         }
 
